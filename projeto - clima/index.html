@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Clima Brasil | Dashboard</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Biblioteca de ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="header">
+
+        <div class="logo">
+            <i class="fa-solid fa-cloud-sun"></i>
+            <h1>Clima <span>Brasil</span></h1>
+        </div>
+
+        <button id="theme-toggle" class="theme-toggle">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+
+    </header>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="container">
+
+        <section class="welcome">
+
+            <h2>Previsão do Tempo</h2>
+
+            <p>
+                Consulte as condições climáticas de qualquer cidade do Brasil.
+            </p>
+
+        </section>
+
+
+        <!-- PESQUISA DE LOCALIZAÇÃO -->
+        <section class="search-section">
+
+            <h2><i class="fa-solid fa-location-dot"></i> Escolha sua localização</h2>
+
+            <div class="search-grid">
+
+                <div class="input-group">
+
+                    <label for="state-select">Estado</label>
+
+                    <select id="state-select">
+                        <option value="">Selecione um estado</option>
+                    </select>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="city-search">Cidade</label>
+
+                    <input
+                        type="text"
+                        id="city-search"
+                        placeholder="Digite o nome da cidade..."
+                        autocomplete="off"
+                    >
+
+                    <div id="city-suggestions" class="suggestions"></div>
+
+                </div>
+
+            </div>
+
+            <p id="search-message">
+                Selecione um estado ou pesquise diretamente uma cidade.
+            </p>
+
+        </section>
+
+
+        <!-- CLIMA ATUAL -->
+        <section class="weather-section">
+
+            <div class="section-title">
+                <h2>Clima atual</h2>
+                <span id="weather-date">--/--/----</span>
+            </div>
+
+
+            <div class="weather-main">
+
+                <div class="weather-location">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <div>
+                        <h3 id="weather-city">Nenhuma cidade selecionada</h3>
+                        <p id="weather-state">Brasil</p>
+                    </div>
+
+                </div>
+
+
+                <div class="temperature">
+
+                    <i id="weather-icon" class="fa-solid fa-cloud-sun"></i>
+
+                    <strong id="weather-temperature">--°C</strong>
+
+                    <p id="weather-description">Aguardando localização</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- INFORMAÇÕES CLIMÁTICAS -->
+            <div class="weather-details">
+
+                <article class="weather-card">
+
+                    <i class="fa-solid fa-temperature-half"></i>
+
+                    <div>
+                        <p>Sensação térmica</p>
+                        <h3 id="feels-like">--°C</h3>
+                    </div>
+
+                </article>
+
+
+                <article class="weather-card">
+
+                    <i class="fa-solid fa-droplet"></i>
+
+                    <div>
+                        <p>Umidade</p>
+                        <h3 id="humidity">--%</h3>
+                    </div>
+
+                </article>
+
+
+                <article class="weather-card">
+
+                    <i class="fa-solid fa-wind"></i>
+
+                    <div>
+                        <p>Velocidade do vento</p>
+                        <h3 id="wind-speed">-- km/h</h3>
+                    </div>
+
+                </article>
+
+
+                <article class="weather-card">
+
+                    <i class="fa-solid fa-cloud-rain"></i>
+
+                    <div>
+                        <p>Probabilidade de chuva</p>
+                        <h3 id="rain-chance">--%</h3>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- PREVISÃO DOS PRÓXIMOS DIAS -->
+        <section class="forecast-section">
+
+            <h2>Previsão para os próximos dias</h2>
+
+            <div id="forecast-container" class="forecast-container">
+
+                <p>A previsão aparecerá após selecionar uma cidade.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- GRÁFICO DE TEMPERATURA -->
+        <section class="chart-section">
+
+            <h2>Variação da temperatura</h2>
+
+            <div id="temperature-chart"></div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer class="footer">
+
+        <p>Clima Brasil - Dashboard Meteorológico</p>
+
+    </footer>
+
+
+    <!-- BIBLIOTEIRA DE GRÁFICOS -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+    <!-- JAVASCRIPT -->
+    <script src="js/scripts.js"></script>
+
+</body>
+
+</html>

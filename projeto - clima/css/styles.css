@@ -1,0 +1,464 @@
+
+/* ==============================
+   CONFIGURAÇÕES GERAIS
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+:root {
+    --cor-fundo: #f1f5f9;
+    --cor-card: #ffffff;
+    --cor-texto: #1e293b;
+    --cor-secundaria: #64748b;
+    --cor-azul: #2563eb;
+    --cor-borda: #e2e8f0;
+}
+
+body {
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+    min-height: 100vh;
+    transition: 0.3s;
+}
+
+
+/* ==============================
+   TEMA ESCURO
+============================== */
+
+body.dark {
+    --cor-fundo: #0f172a;
+    --cor-card: #1e293b;
+    --cor-texto: #f8fafc;
+    --cor-secundaria: #cbd5e1;
+    --cor-azul: #38bdf8;
+    --cor-borda: #334155;
+}
+
+
+/* ==============================
+   CABEÇALHO
+============================== */
+
+.header {
+    background: #0f2c50;
+    color: white;
+    padding: 20px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo i {
+    font-size: 30px;
+    color: #38bdf8;
+}
+
+.logo h1 {
+    font-size: 24px;
+}
+
+.logo span {
+    color: #38bdf8;
+}
+
+.theme-toggle {
+    background: #ffffff20;
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.theme-toggle:hover {
+    background: #ffffff35;
+}
+
+
+/* ==============================
+   CONTEÚDO PRINCIPAL
+============================== */
+
+.container {
+    width: 86%;
+    max-width: 1300px;
+    margin: 35px auto;
+}
+
+.welcome {
+    margin-bottom: 30px;
+}
+
+.welcome h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    color: var(--cor-secundaria);
+    line-height: 1.5;
+}
+
+
+/* ==============================
+   PESQUISA
+============================== */
+
+.search-section {
+    background: var(--cor-card);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid var(--cor-borda);
+    margin-bottom: 30px;
+}
+
+.search-section h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.search-section h2 i {
+    color: var(--cor-azul);
+}
+
+.search-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    position: relative;
+}
+
+.input-group label {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+    outline: none;
+    font-size: 15px;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: var(--cor-azul);
+}
+
+#search-message {
+    margin-top: 15px;
+    color: var(--cor-secundaria);
+    font-size: 13px;
+}
+
+
+/* ==============================
+   SUGESTÕES DE CIDADES
+============================== */
+
+.suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--cor-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    margin-top: 5px;
+    z-index: 10;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+}
+
+.suggestions.ativa {
+    display: block;
+}
+
+.suggestion-item {
+    padding: 12px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.suggestion-item:hover {
+    background: var(--cor-fundo);
+}
+
+
+/* ==============================
+   TÍTULOS DAS SEÇÕES
+============================== */
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-title span {
+    color: var(--cor-secundaria);
+    font-size: 14px;
+}
+
+
+/* ==============================
+   CLIMA ATUAL
+============================== */
+
+.weather-section {
+    background: var(--cor-card);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid var(--cor-borda);
+    margin-bottom: 30px;
+}
+
+.weather-main {
+    background: linear-gradient(120deg, #0f2c50, #2563eb);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.weather-location {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.weather-location i {
+    font-size: 28px;
+    color: #7dd3fc;
+}
+
+.weather-location h3 {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.weather-location p {
+    color: #dbeafe;
+}
+
+.temperature {
+    text-align: center;
+}
+
+.temperature i {
+    font-size: 35px;
+    color: #facc15;
+}
+
+.temperature strong {
+    display: block;
+    font-size: 48px;
+    margin: 10px 0;
+}
+
+.temperature p {
+    color: #dbeafe;
+}
+
+
+/* ==============================
+   DETALHES DO CLIMA
+============================== */
+
+.weather-details {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.weather-card {
+    background: var(--cor-fundo);
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.weather-card i {
+    color: var(--cor-azul);
+    font-size: 25px;
+}
+
+.weather-card p {
+    color: var(--cor-secundaria);
+    font-size: 12px;
+    margin-bottom: 7px;
+}
+
+.weather-card h3 {
+    font-size: 19px;
+}
+
+
+/* ==============================
+   PREVISÃO DOS PRÓXIMOS DIAS
+============================== */
+
+.forecast-section,
+.chart-section {
+    background: var(--cor-card);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid var(--cor-borda);
+    margin-bottom: 30px;
+}
+
+.forecast-section h2,
+.chart-section h2 {
+    margin-bottom: 20px;
+}
+
+.forecast-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+.forecast-card {
+    background: var(--cor-fundo);
+    border: 1px solid var(--cor-borda);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.forecast-card i {
+    font-size: 28px;
+    color: var(--cor-azul);
+    margin: 15px 0;
+}
+
+.forecast-card p {
+    color: var(--cor-secundaria);
+    font-size: 13px;
+}
+
+.forecast-card h3 {
+    font-size: 20px;
+}
+
+
+/* ==============================
+   GRÁFICO
+============================== */
+
+#temperature-chart {
+    width: 100%;
+    min-height: 250px;
+}
+
+
+/* ==============================
+   RODAPÉ
+============================== */
+
+.footer {
+    background: #0f2c50;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    line-height: 1.8;
+}
+
+.footer p:last-child {
+    color: #93c5fd;
+    font-size: 13px;
+}
+
+
+/* ==============================
+   RESPONSIVIDADE
+============================== */
+
+@media (max-width: 900px) {
+
+    .weather-details {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .forecast-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .header {
+        padding: 18px 5%;
+    }
+
+    .logo h1 {
+        font-size: 20px;
+    }
+
+    .container {
+        width: 92%;
+        margin: 25px auto;
+    }
+
+    .search-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .weather-main {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .weather-location {
+        justify-content: center;
+    }
+
+    .weather-details {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .forecast-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .temperature strong {
+        font-size: 40px;
+    }
+
+}
